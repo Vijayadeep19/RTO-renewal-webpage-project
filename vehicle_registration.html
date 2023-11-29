@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration Form</title>
+    <style>
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, rgb(226, 255, 98),rgb(101, 98, 255), rgb(252, 60, 172));
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin: 50px auto;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="register"] {
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 10px;
+    width: 70px;
+    cursor: pointer;
+    align-content: center;
+    transition: background-color 0.3s;
+}
+
+.register    {
+    background-color: #268ed3;
+    border-radius: 8px;
+    font-size: medium;
+    padding: 10px 10px;
+    color: white;
+    border: 0px;
+}
+
+.hidden {
+    display: none;
+}
+.bg-img {
+            position: fixed; /* Fixed position to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            scale: 100%;
+            object-fit: cover; 
+            z-index: -1;
+}
+.option-button {
+    background-color: #268ed3;
+    border-radius: 8px;
+    font-size: medium;
+    
+    padding: 5px 15px;
+    color: white;
+    border: 0px;
+}
+
+    </style>
+</head>
+<body>
+    <img src="reg2.jpg" class="bg-img">
+    <form id="vehicleForm">
+        <label for="vehicleCategory">Select Vehicle Category:</label>
+        <select id="vehicleCategory" name="vehicleCategory" onchange="showOptions()" required>
+            <option value="" disabled selected>Select Vehicle Category</option>
+            <option value="2wheeler">2-Wheeler</option>
+            <option value="4wheeler">4-Wheeler</option>
+        </select>
+
+        <div id="twoWheelerOptions" class="hidden">
+            <label for="twoWheelerType">Select 2-Wheeler Type:</label>
+            <select id="twoWheelerType" name="twoWheelerType">
+                <option value="" disabled selected>Select 2-Wheeler Type</option>
+                <option value="scooter">Scooter</option>
+                <option value="bike">Bike</option>
+            </select>
+
+            <label for="fuelType">Select Fuel Type:</label>
+            <select id="fuelType" name="fuelType">
+                <option value="" disabled selected>Select Fuel Type</option>
+                <option value="electric">Electric</option>
+                <option value="petrol">Petrol</option>
+            </select>
+
+            <label for="twoWheelerCompany">Select 2-Wheeler Company:</label>
+            <select id="twoWheelerCompany" name="twoWheelerCompany">
+                <option value="" disabled selected>Select 2-Wheeler Company</option>
+                <option value="Bajaj">Bajaj</option>
+                <option value="Ducati">Ducati</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="HarleyDavidson">Harley Davidson</option>
+                <option value="Honda">Honda</option>
+                <option value="KTM">KTM</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Ola">Ola</option>
+                <option value="Piaggio">Piaggio</option>
+                <option value="Royalenfield">Royal Enfield</option>
+                <option value="TVS">TVS</option>
+                <option value="Vespa">Vespa</option>
+                <option value="Yamaha">Yamaha</option>
+                
+
+            </select>
+        </div>
+
+        <div id="fourWheelerOptions" class="hidden">
+            <label for="fuelType">Select Fuel Type:</label>
+            <select id="fuelType" name="fuelType">
+                <option value="" disabled selected>Select Fuel Type</option>
+                <option value="electric">Electric</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+
+            <label for="fourWheelerType">Select 4-Wheeler Type:</label>
+            <select id="fourWheelerType" name="fourWheelerType">
+                <option value="" disabled selected>Select 4-Wheeler Type</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="supercar">Supercar</option>
+            </select>
+
+            <label for="fourWheelerCompany">Select 4-Wheeler Company:</label>
+            <select id="fourWheelerCompany" name="fourWheelerCompany">
+                <option value="" disabled selected>Select 4-Wheeler Company</option>
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Audi">Audi</option>
+                <option value="Bugatti">Bugatti</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Kia">Kia</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Maruti Suzuki">Maruti Suzuki</option>
+                <option value="Maserati">Maserati</option>
+                <option value="McLaren">McLaren</option>
+                <option value="Mercedes Benz">Mercedes Benz</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Rolls Royce">Rolls Royce</option>
+                <option value="Subaru">Subaru</option>
+                <option value="Tata">Tata</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volvo">Volvo</option>
+            </select>
+        </div>
+
+        <label for="manufactureYear">Manufacture Year:</label>
+        <input type="number" id="manufactureYear" name="manufactureYear" min="1990" max="2023" required>
+
+        
+        <a href="reg-success-page.html" class="option-button">Register</a>
+    </form>
+
+    <script>
+        function showOptions() {
+            const vehicleCategory = document.getElementById("vehicleCategory").value;
+            const twoWheelerOptions = document.getElementById("twoWheelerOptions");
+            const fourWheelerOptions = document.getElementById("fourWheelerOptions");
+
+            if (vehicleCategory === "2wheeler") {
+                twoWheelerOptions.classList.remove("hidden");
+                fourWheelerOptions.classList.add("hidden");
+            } else if (vehicleCategory === "4wheeler") {
+                fourWheelerOptions.classList.remove("hidden");
+                twoWheelerOptions.classList.add("hidden");
+            } else {
+                twoWheelerOptions.classList.add("hidden");
+                fourWheelerOptions.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

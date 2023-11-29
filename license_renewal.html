@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenewEase - License Renewal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, rgb(226, 255, 98),rgb(101, 98, 255), rgb(252, 60, 172));
+    
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .info {
+            margin-top: 20px;
+            background-color: rgba(247, 243, 243, 0.6);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #5B86E5;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3F5EAB;
+        }
+        .bg-img{ 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(0.7); /* Corrected property for scaling the image */
+        object-fit: cover;
+        z-index: -1;
+        }
+        
+    </style>
+</head>
+<body>
+    <img src="licence.jpg" class="bg-img">
+    <div class="content">
+        <h2>License Renewal</h2>
+        <p>RenewEase makes license renewal easy and convenient. To renew your license, please provide the following information:</p>
+
+        <div class="info">
+            <h3>Required Information:</h3>
+            <form id="renewalForm" onsubmit="submitForm(event)">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="address">Current Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="licenseNumber">License Number:</label>
+                <input type="text" id="licenseNumber" name="licenseNumber" required>
+
+                <label for="previousRenewalDate">Previous Renewal Date:</label>
+                <input type="date" id="previousRenewalDate" name="previousRenewalDate" required>
+
+                <button type="submit">Submit Renewal</button>
+            </form>
+        </div>
+        <p id="success-message">Renewal application submitted successfully!</p>
+
+        <p>Ensure that all the information is accurate and up-to-date to expedite the renewal process. Thank you for choosing RenewEase!</p>
+    </div>
+</body>
+<script>
+    // JavaScript function to handle form submission
+    function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Your form processing logic goes here
+        // For now, let's just show the success message and redirect after a delay
+        document.getElementById('success-message').style.display = 'block';
+
+        // Redirect after a delay (e.g., 3 seconds)
+        setTimeout(function() {
+            window.location.href = 'success-page.html'; // Replace with the actual URL of your success page
+        }, 1000);
+    }
+</script>
+</html>
