@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up - RenewEase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #36D1DC, #5B86E5);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .options-container {
+            background-color: rgba(247, 243, 243, 0.4);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            padding: 40px 20px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .options-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .option-button1 {
+            background-color: #07fa13;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;   
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            
+        }
+        .option-button2 {
+            background-color: #042875;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .option-button:hover {
+            background-color: #3F5EAB;
+        }
+
+        .form-container {
+            display: none;
+            background-color: rgba(247, 243, 243, 0.4);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            padding: 40px 20px;
+            transition: transform 0.5s ease-in-out;
+            margin-bottom: 250px;
+            
+        }
+        
+        .form-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-input,
+        .captcha-input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .login-input:focus,
+        .captcha-input:focus {
+            border-color: #5B86E5;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .captcha-image {
+            background-color: #fff;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .login-button {
+            background-color: #5B86E5;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #3F5EAB;
+        }
+        .refresh-captcha {
+            background-color: #20e92a;
+            color : #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.3s;
+        }
+            .option-button {
+            background-color: #5B86E5;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;   
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .background-image {
+            position: fixed; /* Fixed position to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            scale: 99%;
+            object-fit: cover; 
+            z-index: -1;
+        }
+        .background-image-2{
+            position: fixed; 
+            bottom: 0px;
+            width:100%;
+            scale: 70%;
+            z-index: -1;
+            ;
+        }
+    </style>
+</head>
+<body>
+    <div class="backgroundz">
+    <img src="renewe.jpeg" class="background-image">
+   
+    </div>
+    <div class="container">
+        <!-- Options Container (Login or Sign Up) -->
+        <div class="options-container">
+            <h2>Welcome to RenewEase</h2>
+            <button class="option-button1" onclick="showForm('login')">Login</button>
+            <button class="option-button2" onclick="showForm('signup')">Sign Up</button>
+        </div>
+
+        <!-- Login Form Container -->
+        <div class="form-container login" id="login-form">
+            <h2>Login to RenewEase</h2>
+            <form onsubmit="return validateCaptcha('captcha')">
+<input type="email" class="login-input" placeholder="Email" required>
+                <input type="password" class="login-input" placeholder="Password" required>
+                <div class="captcha-container">
+                    <input type="text" class="captcha-input" placeholder="Captcha" required>
+                    <div class="captcha-image" id="captcha"></div>
+                    <button class="refresh-captcha"><div  onclick="refreshCaptcha('captcha')">Refresh</div></button>
+                </div>
+                <a href="Options.html" class="option-button">Login</a>
+            </form>
+            <span class="toggle-link" onclick="toggleForm()">Don't have an account? Sign up</span>
+        </div>
+
+        <!-- Sign Up Form Container -->
+        <div class="form-container signup" id="signup-form">
+            <h2>Sign Up for RenewEase</h2>
+            <form onsubmit="return validateCaptcha('captcha-signup')">
+                <input type="email" class="login-input" placeholder="Email" required>
+                <input type="password" class="login-input" placeholder="Password" required>
+                <input type="password" class="login-input" placeholder="Confirm Password" required>
+                <div class="captcha-container">
+                    <input type="text" class="captcha-input" placeholder="Captcha" required>
+                    <div class="captcha-image" id="captcha-signup"></div>
+                <button class="refresh-captcha"><div  onclick="refreshCaptcha('captcha-signup')">Refresh</div></button>
+                </div>
+                <a href="Options.html" class="option-button">Sign up</a>
+            </form>
+            <span class="toggle-link" onclick="toggleForm()" >Already have an account? Log in</span>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formType) {
+            var optionsContainer = document.querySelector('.options-container');
+            var formContainer = document.querySelector('.form-container.' + formType);
+
+            optionsContainer.style.transform = 'translateY(-100%)';
+            formContainer.style.display = 'block';
+        }
+
+        function toggleForm() {
+            var optionsContainer = document.querySelector('.options-container');
+            var loginFormContainer = document.querySelector('.form-container.login');
+            var signupFormContainer = document.querySelector('.form-container.signup');
+
+            optionsContainer.style.transform = 'translateY(0)';
+            loginFormContainer.style.display = 'none';
+            signupFormContainer.style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            generateCaptcha('captcha');
+            generateCaptcha('captcha-signup');
+        });
+
+        function generateCaptcha(containerId) {
+            var captchaContainer = document.getElementById(containerId);
+            var captchaText = generateRandomAlphanumeric(6);
+            captchaContainer.innerText = captchaText;
+        }
+
+        function refreshCaptcha(containerId) {
+            generateCaptcha(containerId);
+        }
+
+        function generateRandomAlphanumeric(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        function validateCaptcha(containerId) {
+            var inputCaptcha = document.querySelector('#' + containerId + ' .captcha-input').value;
+            var generatedCaptcha = document.getElementById(containerId).innerText;
+
+            if (inputCaptcha.toUpperCase() !== generatedCaptcha) {
+                alert('Captcha is incorrect. Please try again.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenewEase - Options</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #51edf8, #1e63f8,rgb(28, 1, 110));
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+
+        .options-container {
+            background-color: rgba(247, 243, 243, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            padding: 40px 20px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .options-container:hover{
+            background-color: rgba(247, 243, 243, 0.9);
+            transition: 0.6s ease-in-out;
+            
+        }
+
+        .options-container h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .option-button {
+            background-color: #5B86E5;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;   
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .option-button:hover {
+            background-color: #03f052;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Options Container -->
+        <div class="options-container">
+            <h2>Welcome to RenewEase</h2>
+            <a href="vehicle_registration.html" class="option-button">Vehicle Registration</a>
+            <a href="license_renewal.html" class="option-button">License Renewal</a>
+            <a href="history.html" class="option-button">History</a>
+        </div>
+    </div>
+</body>
+</html>
